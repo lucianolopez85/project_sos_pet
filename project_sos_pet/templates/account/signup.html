@@ -1,4 +1,5 @@
-  
+{% load crispy_forms_tags %}
+
 <!-- {% load static %} -->
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,36 +19,19 @@
 
 <body class="d-flex flex-column">
   <div class="sidenav">
-         <div class="login-main-text text-center"
-         style="    
-            font-family:Noto Sans, sans-serif;
-            color: rgba(255, 255, 255, 0.667);">
-            <h4>Faça seu login</h4>  
+         <div class="login-main-text">
+            <h4>Faça seu cadastro</h4>  
          </div>
       </div>
-      <div class="main">
+      <div class="d-flex main">
          <div class="col-md-6 col-sm-12">
-            <div class="login-form" style="margin-top: 25%;" >
-               <form action="submit", method="POST">{% csrf_token %}
-                   <div class="form-group">
-                     <label>Usuário</label>
-                     <input type="text" class="form-control" placeholder="Usuário" name="username">
-                  </div>
-                  <div class="form-group">
-                     <label>Senha</label>
-                     <input type="password" class="form-control" placeholder="Senha" name="password">
-                  </div>
-                  {% if messages %}
-                      {% for message in messages %}
-                          <div class="alert alert-danger">
-                              {{ message }}
-                            </div>
-                      {% endfor %}
-                  {% endif %}
-                  <button type="submit" class="btn btn-green">Login</button> 
-                                
-               </form>
-               <p class="mt-4">Não tem cadastro?<a href="/accounts/signup/" > Clique aqui</a></p>
+            <div class="login-form" style="margin-top: 25%;">
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-success" type="submit">Cadastrar</button>
+                </form>         
             </div>
          </div>
       </div>
@@ -73,20 +57,21 @@
         }
 
         @media screen and (max-height: 450px) {
-            .sidenav {padding-top: 15px;}            
+            .sidenav {padding-top: 15px;}
         }
 
         @media screen and (max-width: 450px) {
             .login-form{
                 margin-top: 10%;
             }
+
             .register-form{
                 margin-top: 10%;
             }
         }
         @media screen and (max-width: 768px){
             .sidenav{
-                background-image: url(/media/img/login-sup-peq.jpeg);    
+                background-image: url(/media/img/login-sup-peq2.jpeg);    
                 background-position:center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -104,7 +89,7 @@
                 z-index: 1;
                 top: 0;
                 left: 0;
-                background-image: url(/media/img/login-lateral-2.jpeg);    
+                background-image: url(/media/img/login-lateral-1.jpg);    
                 background-position:center;
                 background-repeat: no-repeat;
                 background-size: cover;

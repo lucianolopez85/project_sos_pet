@@ -1,11 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
-  <head>
-    {% block head %} {% endblock %} {% block style %}{% endblock %} {% include
-    "model-header.html" %}
-  </head>
+    <head>
+        {% include 'sos_pet/model-header.html' %}
+    </head>
 
-  <body>
-    {% block content %}{% endblock %} {% include "model-footer.html" %}
-  </body>
+    <body>
+        {% block content %}{% endblock %}
+        {% include 'sos_pet/model-footer.html' %}
+    </body>
 </html>
+

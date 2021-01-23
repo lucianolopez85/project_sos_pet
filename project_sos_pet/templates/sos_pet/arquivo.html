@@ -2,7 +2,8 @@
 
 {% block content %}
 {% include 'sos_pet/nav-voltar.html' %}
-
+    <h1 class="text-center">Detalhes do Pet</h1>
+    <br>
   <!-- Ini Modal -->
   <div class="modal fade" id="modal_confirm">
     <div class="modal-dialog modal-dialog-centered">
@@ -26,69 +27,29 @@
 
   <div class="container">
     <div class="row">
-
-      <!-- <div class="col-sm-12 col-md-12 col-lg-4">
-        <div class="flexslider">
-          <ul class="slides">
-            <li>
-              {% if pet.photo %}
-              <img class="w-100" src="{{ pet.photo.url }}" alt="Norway" 
-              style="margin-top: 5px;box-shadow:none;"> 
-              {% else %}
-              <img class="w-100" src="/media/pet/sem-foto.jpeg" alt="Norway" 
-              style="margin-top: 5px;box-shadow:none;"/> 
-              {% endif %}
-            </li>
-            <li>
-              {% if pet.photo2 %}
-              <img class="w-100" src="{{ pet.photo2.url }}" alt="Norway" 
-              style="margin-top: 5px;box-shadow:none;"> 
-              {% else %}
-              <img class="w-100" src="/media/pet/sem-foto.jpeg" alt="Norway" 
-              style="margin-top: 5px;box-shadow:none;"/> 
-              {% endif %}
-            </li>
-            <li>
-              {% if pet.photo3 %}
-              <img class="w-100" src="{{ pet.photo3.url }}" alt="Norway" 
-              style="margin-top: 5px;box-shadow:none;"> 
-              {% else %}
-              <img class="w-100" src="/media/pet/sem-foto.jpeg" alt="Norway" 
-              style="margin-top: 5px;box-shadow:none;"/> 
-              {% endif %}
-            </li>
-          </ul>
-        </div>
-      </div> -->
-      
         <div class="col-sm-12 col-md-12 col-lg-4">
             <div class="card-imagem" 
             style="
             height: 100%; 
             width: 100%;">
-                {% if pet.photo %}
                 <img class="w-100" src="{{ pet.photo.url }}" alt="Norway" 
-                style="margin-top: 5px;box-shadow:none;"> 
-                {% else %}
-                <img class="w-100" src="/media/pet/sem-foto.jpeg" alt="Norway" 
-                style="margin-top: 5px;box-shadow:none;"> 
-                {% endif %}
+                style="
+                margin-top: 5px;
+                box-shadow:none;"> 
             </div>
             <br>
-            
         </div>
         <div class="col-sm-12 col-md-12 col-lg-8">
             <h5>{{ pet.description }}</h5>
             <br>
             <p><b>Nome: </b>{{ pet.petname }}</p>                     
-            <p><b>Sexo: </b>{{ pet.sexo }}</p>    
-            <p><b>Temperamento: </b>{{ pet.temperamento }}</p>     
+            <p><b>Sexo: </b>{{ pet.sexo }}</p>      
             <p><b>Castrado: </b>{{ pet.castrado }}</p> 
             <p><b>Vacinado: </b>{{ pet.vacinado }}</p>             
             <h4>Contato </h4>   
             <p><b>Nome: </b>{{ pet.name }}</p>                   
             <p><b>Tel.: </b>{{ pet.phone }}</p> 
-            <p><b>Localizado em: </b>{{ pet.city }} {{ pet.zone }}</p> 
+            <p><b>Localizado em: </b>{{ pet.city }}, {{ pet.zone }}</p> 
             
               {% if request.user == pet.user %}
                   <a href="/pet/register/?id={{ pet.id }}">

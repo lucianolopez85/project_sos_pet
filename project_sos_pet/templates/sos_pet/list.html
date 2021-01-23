@@ -1,35 +1,26 @@
-{% extends "model-page.html" %}
 
-{% block style %}
-    <style>
-        div.polaroid {
-            width: 250px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
-        }
-        div.container {
-            padding: 10px;
-        }
-    </style>
-{% endblock %}
+{% extends "sos_pet/model-page.html" %}
 
 {% block content %}
-    <div class="container">
-            <div class="row">
-                {% for p in pet %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <a href="../detail/{{ p.id }}">
-                            <div class="polaroid">
-                                <img src="{{ p.photo.url }}" alt="Norway" style="width:100%">
-                                <div class="container">
-                                    <p>{{ p.city }}</p>
-                                </div>
-                            </div>
-                        </a>
-                        <br>
-                    </div>                
-                {% endfor %}
-            </div>
-        </div>  
-    </div>  
+{% include 'sos_pet/nav-cadastrar-categoria.html' %}
+<div class="container">
+    <div class="row mt-4">
+        {% for p in pet %}
+        <div class="col-12 col-md-4 my-2 mb-5">
+            <a href="../detail/{{ p.id }}">
+                <div class="position-relative">
+                    {% if p.photo %}
+                    <img class="w-100" src="{{ p.photo.url }}" alt="">
+                    {% else %}
+                    <img class="w-100" src="/media/pet/sem-foto.jpeg" alt="Norway" >
+                    {% endif %}
+                    <div class="position-absolute dados">
+                        <h3 class="text-right text">{{p.city}}  {{p.zone}}</h3>                    
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
