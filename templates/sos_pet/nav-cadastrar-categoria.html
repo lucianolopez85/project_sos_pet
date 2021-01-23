@@ -1,0 +1,37 @@
+{% load static %}
+
+<div id="jumbo-superior" class="jumbotron rounded-0 header text-center " 
+style="    
+font-family:Noto Sans, sans-serif;
+color: rgba(255, 255, 255, 0.667);">
+    <h1>Pet Floripa</h1>
+    <p>Nos ajude a salvar mais Pets!</p>
+</div>
+<div class="container-fluid mt-0" >
+    <div class="row justify-content-between">
+        <div class="row ml-2 mb-2" >               
+                <div class="bg mb-2">
+                    <a class="nav-link text-white" href="/pet/register/">Cadastrar Pet</a>
+                </div>
+                <div class="bg mb-2 dropdown ">
+                    <li id="categoria" class="btn dropdown-toggle"  data-toggle="dropdown">
+                      Categoria
+                    </li>
+                    <ul class="dropdown-menu" aria-labelled-by="categoria">
+                      <li><a class="dropdown-item" href="/pet/all/">Todos</a></li>
+                      <li><a class="dropdown-item" href="/pet/user/">Meu cadastro</a></li>
+                      <li><a class="dropdown-item" href="/pet/cat/">Gato</a></li>
+                      <li><a class="dropdown-item" href="/pet/dog/">Cachorro</a></li>
+                    </ul>
+                </div>           
+        </div>
+        <div class="row mr-2 mb-2" >            
+                <div class="d-flex ra justify-content-end ">
+                    <div class="bg mb-2">
+                        <a class="nav-link text-white" style="font-size: large;" href="/">Sair</a>    
+                    </div>                
+                </div>
+            
+        </div>
+      </div>
+</div>
