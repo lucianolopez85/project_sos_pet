@@ -6,7 +6,7 @@ Em detalhes o usuário pode editar ou excluir apenas o seu cadastro.
 
 No menu é possível filtrar por categoria gato, cachorro, todos, ou apenas seu cadastro.
 
-Para efetuar o cadastro é necessário fazer cadastro.
+Para efetuar o cadastro é necessário fazer login.
 
 
 Melhorias:
